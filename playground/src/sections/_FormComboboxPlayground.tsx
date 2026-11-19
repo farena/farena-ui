@@ -57,12 +57,14 @@ export default function FormComboboxPlayground() {
     multiple: ComboOption[];
     newOption: ComboOption[];
     disabled: ComboOption | null;
+    flexField: ComboOption | null;
   }>({
     single: null,
     icon: null,
     multiple: [FRUITS[0]],
     newOption: [],
     disabled: null,
+    flexField: null,
   });
 
   return (
@@ -107,6 +109,17 @@ export default function FormComboboxPlayground() {
               ...combobox,
               newOption: newOption as ComboOption[],
             })
+          }
+        />
+      </Example>
+      <Example title="Flex field">
+        <ComboboxExample
+          label="Fruit"
+          flexField
+          noDataMsg="No fruits found"
+          value={combobox.flexField}
+          onChange={(flexField) =>
+            setCombobox({ ...combobox, flexField: flexField as ComboOption })
           }
         />
       </Example>

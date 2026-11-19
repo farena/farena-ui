@@ -26,6 +26,7 @@ export default function FormSelectPlayground() {
     error: unknown;
     disabled: unknown;
     multiple: SelectOption[];
+    flexField: unknown;
   }>({
     basic: null,
     primitive: "M",
@@ -33,6 +34,7 @@ export default function FormSelectPlayground() {
     error: null,
     disabled: "green",
     multiple: [COLORS[0]],
+    flexField: null,
   });
   const [lastEvent, setLastEvent] = useState<string | null>(null);
 
@@ -74,6 +76,15 @@ export default function FormSelectPlayground() {
           errors={["Required"]}
           value={select.error}
           onChange={(error) => setSelect({ ...select, error })}
+        />
+      </Example>
+      <Example title="Flex field">
+        <FormSelect
+          label="Color"
+          flexField
+          options={COLORS}
+          value={select.flexField}
+          onChange={(flexField) => setSelect({ ...select, flexField })}
         />
       </Example>
       <Example title="Disabled">

@@ -26,6 +26,7 @@ export default function FormDatePlayground() {
     disabled: "2026-01-15",
     error: null,
     spanish: null,
+    flexField: null,
   });
 
   const field = (key: string) => ({
@@ -54,6 +55,9 @@ export default function FormDatePlayground() {
       </Example>
       <Example title="Min / max date (3 days ago to 10 days ahead)">
         <FormDate label="Booking" minDate={MIN_DATE} maxDate={MAX_DATE} {...field("minMax")} />
+      </Example>
+      <Example title="Flex field">
+        <FormDate label="Check-in" flexField {...field("flexField")} />
       </Example>
       <Example title="Custom lang (lang={es})">
         <FormDate label="Date" lang={es} {...field("spanish")} />

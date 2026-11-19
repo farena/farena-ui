@@ -9,6 +9,7 @@ export default function FormNumberPlayground() {
     arrows: 5,
     disabled: 42,
     error: -1,
+    flexField: 3,
   });
 
   return (
@@ -39,6 +40,14 @@ export default function FormNumberPlayground() {
           selectOnFocus
           value={number.arrows}
           onChange={(arrows) => setNumber({ ...number, arrows: Number(arrows) })}
+        />
+      </Example>
+      <Example title="Flex field">
+        <FormNumber
+          label="Rooms"
+          flexField
+          value={number.flexField}
+          onChange={(flexField) => setNumber({ ...number, flexField: Number(flexField) })}
         />
       </Example>
       <Example title="Disabled">

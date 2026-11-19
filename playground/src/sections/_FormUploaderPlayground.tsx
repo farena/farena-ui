@@ -79,6 +79,14 @@ export default function FormUploaderPlayground() {
           )}
         </FormUploader>
       </Example>
+      <Example title="Flex field">
+        <FormUploader
+          label="Contract"
+          flexField
+          onChange={onChange("flexField")}
+          onReset={onReset("flexField")}
+        />
+      </Example>
       <Example title="Disabled">
         <FormUploader label="Disabled" disabled />
       </Example>

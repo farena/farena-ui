@@ -11,6 +11,7 @@ export default function FormTextPlayground() {
     error: "invalid@",
     maxChars: "",
     textarea: "",
+    flexField: "",
   });
 
   return (
@@ -41,6 +42,15 @@ export default function FormTextPlayground() {
           value={text.password}
           errors={[]}
           onChange={(password) => setText({ ...text, password })}
+        />
+      </Example>
+      <Example title="Flex field">
+        <FormText
+          label="Company"
+          flexField
+          value={text.flexField}
+          errors={[]}
+          onChange={(flexField) => setText({ ...text, flexField })}
         />
       </Example>
       <Example title="Disabled">

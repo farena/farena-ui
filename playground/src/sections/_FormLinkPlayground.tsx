@@ -14,6 +14,11 @@ export default function FormLinkPlayground() {
           John Doe
         </FormLink>
       </Example>
+      <Example title="Flex field">
+        <FormLink label="Owner" flexField icon="fa-solid fa-user" to="/login">
+          Jane Doe
+        </FormLink>
+      </Example>
       <Example title="Disabled">
         <FormLink label="Disabled" disabled to="/login">
           Not clickable

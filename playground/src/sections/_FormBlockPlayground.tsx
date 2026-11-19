@@ -9,6 +9,7 @@ export default function FormBlockPlayground() {
     basic: "",
     icon: "",
     error: "",
+    flexField: "",
   });
 
   return (
@@ -50,6 +51,23 @@ export default function FormBlockPlayground() {
       <Example title="Read-only content">
         <FormBlock label="Created at" icon="fa-solid fa-calendar">
           <div className="d-flex align-items-center h-100 px-2">2026-10-01 12:00</div>
+        </FormBlock>
+      </Example>
+      <Example title="Flex field">
+        <FormBlock id="block-flex" label="Country" flexField>
+          <select
+            id="block-flex"
+            className="w-100"
+            value={block.flexField}
+            onChange={(e) => setBlock({ ...block, flexField: e.target.value })}
+          >
+            <option value="">Select a country...</option>
+            {COUNTRIES.map((country) => (
+              <option key={country} value={country}>
+                {country}
+              </option>
+            ))}
+          </select>
         </FormBlock>
       </Example>
       <Example title="Disabled">

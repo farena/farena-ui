@@ -114,7 +114,7 @@ export default function FormButtonPlayground() {
       </Example>
       <Example title="Links (to)">
         <div className="d-flex flex-wrap" style={{ gap: "0.5em" }}>
-          <FormButton to="/forgot_password" icon="fa-solid fa-link">
+          <FormButton to="#formlink" icon="fa-solid fa-link">
             Internal link
           </FormButton>
           <FormButton

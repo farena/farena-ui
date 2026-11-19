@@ -1,5 +1,12 @@
 import type { ReactNode } from "react";
 
+/** "Widget / WidgetCounter" -> "widget-widgetcounter", used for in-page links. */
+const sectionId = (title: string) =>
+  title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+
 export function Section({
   title,
   state,
@@ -10,7 +17,7 @@ export function Section({
   children: ReactNode;
 }) {
   return (
-    <section className="card mb-4">
+    <section id={sectionId(title)} className="card mb-4">
       <div className="card-header p-3">
         <h4 className="m-0">{title}</h4>
       </div>

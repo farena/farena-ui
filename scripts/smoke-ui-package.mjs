@@ -26,7 +26,11 @@ const packed = JSON.parse(
   ),
 )[0];
 for (const { path } of packed.files) {
-  if (!/^(dist\/|README\.md$|CHANGELOG\.md$|package\.json$)/.test(path))
+  if (
+    !/^(dist\/|README\.md$|CHANGELOG\.md$|LICENSE$|THIRD_PARTY_NOTICES\.txt$|package\.json$)/.test(
+      path,
+    )
+  )
     throw new Error(`Unexpected package file: ${path}`);
   if (/\.test\.|\.env|Sidebar|Topbar/.test(path)) throw new Error(`Private file packed: ${path}`);
 }

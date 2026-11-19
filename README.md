@@ -20,4 +20,4 @@ The playground consumes the built package, so rebuild it (`npm run build:ui`) af
 
 `scripts/smoke-ui-package.mjs` packs the library, installs the tarball in a fresh consumer under the system temp directory and checks the public inventory (`scripts/component-manifest.json`), types, CSS, a Vite build and Node rendering.
 
-License and third-party notices are pending before the first npm release.
+Licensed under the [MIT License](LICENSE).

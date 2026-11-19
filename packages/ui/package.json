@@ -4,13 +4,16 @@
   "private": false,
   "type": "module",
   "description": "Farena React UI components",
+  "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
   "files": [
     "dist",
     "README.md",
-    "CHANGELOG.md"
+    "CHANGELOG.md",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.txt"
   ],
   "main": "./dist/index.js",
   "module": "./dist/index.js",

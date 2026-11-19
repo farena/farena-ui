@@ -9,4 +9,4 @@
 - Load charts and editors after mount; use locally installed Monaco workers.
 - Add behavior tests, monorepo validation and an external tarball consumer smoke.
 
-Release remains pending license and third-party notice review by the owner.
+Licensed under MIT. Third-party notices for the bundled Monaco workers ship in `THIRD_PARTY_NOTICES.txt`.

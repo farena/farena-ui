@@ -1,6 +1,6 @@
 # @farena/farena-ui
 
-React 19 components extracted from the Farena admin panel, with their existing names and callback contracts. Version 0.1.0 is prepared locally; publication is pending owner confirmation of the license and third-party notices. No license is asserted for this package yet.
+React 19 components extracted from the Farena admin panel, with their existing names and callback contracts. Licensed under [MIT](LICENSE).
 
 ```sh
 npm install @farena/farena-ui react@^19 react-dom@^19
@@ -54,4 +54,8 @@ ESM and TypeScript declarations; React 19. No React 18, CommonJS, RSC or complet
 
 ## Release checklist
 
-Before a real release, resolve the package license and third-party notices, especially any CSS derived from Bootstrap; verify ownership/access for the npm scope and package name; inspect a freshly validated tarball; and configure npm credentials outside the repository. Then run `npm publish --workspace=@farena/farena-ui --access public --dry-run`. Publishing, tags and deployment require a separate instruction. No automatic publication is configured.
+Before a real release, verify ownership/access for the npm scope and package name; inspect a freshly validated tarball; and configure npm credentials outside the repository. Then run `npm publish --workspace=@farena/farena-ui --access public --dry-run`. Publishing, tags and deployment require a separate instruction. No automatic publication is configured.
+
+## License
+
+MIT © Federico Arena. The bundle embeds the Monaco editor workers; their licenses and notices are in `THIRD_PARTY_NOTICES.txt`.

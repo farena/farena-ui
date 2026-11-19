@@ -59,12 +59,12 @@ export default function InfiniteScrollPlayground() {
       <Example title="Scrollable (fills a 300px parent)">
         <div className="mb-2">
           <button
-            className="btn btn-sm btn-primary mr-2"
+            className="fui-btn btn btn-sm btn-primary mr-2"
             onClick={() => scrollRef.current?.triggerLoadMore()}
           >
             Trigger load more
           </button>
-          <button className="btn btn-sm btn-secondary" onClick={reset}>
+          <button className="fui-btn btn btn-sm btn-secondary" onClick={reset}>
             Reset
           </button>
         </div>

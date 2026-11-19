@@ -34,7 +34,9 @@ export default function WidgetCounter({
         {tooltip && (
           <span className="counter-widget-info" tabIndex={0} aria-label={tooltip}>
             <FormIcon icon="fa fa-circle-info" />
-            <span className="tooltip bottom-left counter-widget-tooltip">{tooltip}</span>
+            <span className="fui-tooltip tooltip bottom-left counter-widget-tooltip">
+              {tooltip}
+            </span>
           </span>
         )}
       </div>

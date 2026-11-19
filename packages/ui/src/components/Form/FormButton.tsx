@@ -106,7 +106,7 @@ export default function FormButton({
   };
 
   const classes = [
-    "btn",
+    "fui-btn btn",
     `btn-${outlined ? "outline-" : ""}${theme}`,
     block && "btn-block",
     small && "btn-sm",
@@ -121,7 +121,7 @@ export default function FormButton({
   const content = (
     <>
       {tooltip && (
-        <div className={`tooltip ${tooltipPosition}`} ref={tooltipRef}>
+        <div className={`fui-tooltip tooltip ${tooltipPosition}`} ref={tooltipRef}>
           {tooltip}
         </div>
       )}

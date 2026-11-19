@@ -12,7 +12,7 @@ export default function WidgetPlayground() {
               icon="fa fa-chart-line"
               title="Revenue"
               description="Last 30 days"
-              buttons={<button className="btn btn-sm btn-primary">See all</button>}
+              buttons={<button className="fui-btn btn btn-sm btn-primary">See all</button>}
               footer={<div className="card-footer small">Widget footer</div>}
             >
               <p className="m-0">Widget content</p>

@@ -240,7 +240,7 @@ export default function FormDropdown({
           type="button"
           ref={buttonRef}
           style={{ position: "relative" }}
-          className="btn btn-primary"
+          className="fui-btn btn btn-primary"
           onClick={toggleDropdown}
         >
           Open dropdown

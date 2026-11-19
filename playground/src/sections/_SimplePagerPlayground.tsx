@@ -22,7 +22,10 @@ export default function SimplePagerPlayground() {
         />
       </Example>
       <Example title="Controlled from outside (actualPage)">
-        <button className="btn btn-sm btn-secondary mb-2" onClick={() => setPage(LAST_PAGE)}>
+        <button
+          className="fui-btn btn btn-sm btn-secondary mb-2"
+          onClick={() => setPage(LAST_PAGE)}
+        >
           Go to last page
         </button>
         <SimplePager lastPage={LAST_PAGE} actualPage={page} onChange={setPage} />

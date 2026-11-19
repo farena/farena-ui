@@ -323,7 +323,7 @@ export default function FormDateRange({
                   <button
                     key={range.label}
                     type="button"
-                    className="btn btn-sm btn-outline-dark"
+                    className="fui-btn btn btn-sm btn-outline-dark"
                     onClick={() => applyCustomRange(range, close)}
                   >
                     {range.label}

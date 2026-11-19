@@ -1,4 +1,5 @@
 .accordion {
+  font-size: 0.9em;
   border: 1px solid var(--fui-border, #d0d5dd);
   border-radius: var(--fui-radius, 0.4rem);
 }
@@ -38,4 +39,11 @@
 
 .accordion-body[hidden] {
   display: none;
+}
+
+.accordion-head > span:first-child {
+  font-weight: 600;
+}
+.accordion-error .accordion-head > span {
+  color: var(--fui-danger);
 }

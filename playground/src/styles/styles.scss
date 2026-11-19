@@ -1,36 +1,86 @@
-// Playground theme: Bootstrap 4.6 (reboot, grid, utilities) plus the admin
-// panel look the components were extracted from.
-$spacer: 1rem;
-$spacers: (
-  6: $spacer * 4.5,
-  7: $spacer * 6,
-);
+// Playground page layout only. Components are styled by
+// @farena/farena-ui/styles.css alone; this file must not target their classes.
 
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap");
+
+// Bootstrap 4.6 grid and spacing/display utilities for the page layout
+$spacer: 1rem;
 @import "bootstrap/scss/functions";
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/mixins";
-@import "bootstrap/scss/root";
-@import "bootstrap/scss/reboot";
-@import "bootstrap/scss/type";
-@import "bootstrap/scss/images";
 @import "bootstrap/scss/grid";
-@import "bootstrap/scss/tables";
-@import "bootstrap/scss/forms";
-@import "bootstrap/scss/badge";
-@import "bootstrap/scss/alert";
 @import "bootstrap/scss/utilities";
 
-@import "./functions";
-@import "./variables";
-@import "./main";
-@import "./utils";
-@import "./containers";
-@import "./items";
-@import "./colors";
-@import "./forms";
-@import "./fa_wysiwyg";
-@import "./transitions";
-@import "./tabs";
-@import "./lists";
-@import "./accordion";
-@import "./calendar";
+// Theming the package through its tokens
+:root {
+  --fui-font-family: "Lexend", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--fui-surface);
+  color: var(--fui-text);
+  font-family: var(--fui-font-family);
+  font-size: var(--fui-font-size);
+  line-height: 1.5;
+}
+
+h2,
+h4 {
+  margin: 0 0 0.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+small,
+.small {
+  font-size: 80%;
+}
+
+code {
+  color: #e83e8c;
+  font-size: 87.5%;
+}
+
+pre {
+  margin: 0;
+  overflow: auto;
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.card {
+  position: relative;
+  border-radius: var(--fui-radius);
+  background: #ffffff;
+  box-shadow: var(--fui-shadow);
+
+  > .card-header {
+    padding: 0.5em;
+  }
+
+  > .card-body {
+    padding: 0.5em 1em;
+  }
+}
+
+.row {
+  row-gap: 30px;
+}

@@ -1,8 +1,6 @@
 @use "tokens";
 @use "base";
-
-// Component partials are added here by the integration step after each family
-// owns and validates its styles.
-
 @use "@farena/fa-modal-react/style.css" as modal;
 @use "@farena/fa-wysiwyg-react/style.css" as wysiwyg;
+// After the editor and modal stylesheets so the theme overrides their defaults
+@use "theme";

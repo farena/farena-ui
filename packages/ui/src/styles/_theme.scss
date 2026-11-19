@@ -1,0 +1,1000 @@
+// Visual theme of the components. Every selector is scoped to classes the
+// package renders, so the stylesheet never restyles a consumer's own markup.
+
+$themes: primary, secondary, success, info, warning, danger, light, medium, dark, white;
+
+@keyframes fui-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fui-pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 1;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Fields
+// ---------------------------------------------------------------------------
+
+.form-container {
+  --color: var(--fui-text);
+  --background: var(--fui-surface);
+  --height: var(--fui-input-height);
+  position: relative;
+  margin-bottom: 0.5em;
+  color: var(--color);
+
+  label {
+    display: inline-block;
+    margin: 0 0 0.25rem;
+    font-size: 0.9em;
+    font-weight: 600;
+    transition: 0.25s ease;
+  }
+
+  .error-message {
+    position: absolute;
+    right: 0;
+    bottom: -1.5em;
+    margin: 0;
+    color: var(--fui-danger);
+    font-size: 0.8em;
+    text-align: right;
+  }
+
+  .form-wrapper {
+    display: flex;
+    align-items: stretch;
+    border: 1px solid var(--fui-input-border);
+    border-radius: var(--fui-radius);
+    background: var(--background);
+
+    > .icon {
+      display: grid;
+      flex: none;
+      place-items: center;
+      height: var(--height);
+      aspect-ratio: 1;
+    }
+
+    &:focus-within {
+      border-color: var(--fui-primary);
+    }
+
+    .link-dark {
+      display: flex;
+      flex: 1;
+      align-items: center;
+      height: var(--height);
+      padding: 0.5em 0.8em;
+    }
+  }
+
+  :where(input:not([type="checkbox"]):not([type="radio"]):not([type="color"]), select, textarea) {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 0.5em 0.8em;
+    color: var(--color);
+    font: inherit;
+  }
+
+  :where(input:not([type="checkbox"]):not([type="radio"]):not([type="color"]), select) {
+    flex: 1;
+    height: var(--height);
+  }
+
+  // The wrapper border shows the focus
+  .form-wrapper :is(input, select, textarea):focus-visible {
+    outline: 0;
+    box-shadow: none;
+  }
+
+  .form-wrapper > .icon ~ :is(input, textarea) {
+    padding-left: 0;
+  }
+
+  select {
+    padding: 0.5em 0;
+    border-right: 0.8em solid transparent;
+    border-left: 0.8em solid transparent;
+  }
+
+  &:not(.show-arrows) input[type="number"] {
+    appearance: textfield;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      appearance: none;
+      margin: 0;
+    }
+  }
+
+  input[type="checkbox"] {
+    accent-color: var(--fui-dark);
+  }
+
+  &.disabled {
+    opacity: 0.6;
+    pointer-events: none;
+
+    :is(label, input, select, textarea),
+    .form-wrapper > .icon {
+      opacity: 0.6;
+    }
+  }
+
+  &.input-error {
+    label,
+    label small {
+      color: var(--fui-danger) !important;
+    }
+
+    .form-wrapper,
+    .fa-wysiwyg {
+      border-color: var(--fui-danger) !important;
+    }
+  }
+
+  // Inline label on wide screens; the field shows its border on hover
+  &.flex-field {
+    @media (min-width: 512px) {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      align-items: center;
+
+      label {
+        margin: 0;
+      }
+
+      .form-wrapper {
+        border-color: transparent;
+
+        &:hover {
+          border-color: var(--fui-input-border);
+        }
+
+        &:focus-within {
+          border-color: #7c7c7c;
+        }
+      }
+    }
+  }
+
+  &.disabled.flex-field {
+    opacity: 1;
+
+    .form-wrapper {
+      background: transparent;
+
+      select {
+        appearance: none;
+      }
+    }
+  }
+
+  &.form-textarea.flex-field label {
+    align-self: flex-start;
+    padding-top: 0.5em;
+  }
+}
+
+// FormSwitch
+.form-container.form-switch {
+  --radius: 26px;
+  --width: 50px;
+  --height: 30px;
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-top: 1em;
+  border: unset;
+  background: transparent;
+
+  label {
+    margin: 0;
+    font-size: 1em;
+  }
+
+  input[type="checkbox"] {
+    position: relative;
+    width: var(--width);
+    height: var(--height);
+    margin: 0;
+    border: 1px solid #d9dadc;
+    border-radius: var(--width);
+    outline: none;
+    background-color: #ffffff;
+    box-shadow: inset -20px 0 0 0 #ffffff;
+    appearance: none;
+    cursor: pointer;
+    transition-duration: 200ms;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 1px;
+      left: 1px;
+      width: var(--radius);
+      height: var(--radius);
+      border-radius: 50%;
+      background-color: transparent;
+      box-shadow: 2px 4px 6px rgb(0 0 0 / 20%);
+    }
+
+    &:checked {
+      border-color: var(--fui-primary);
+      background-color: var(--fui-primary);
+      box-shadow: inset 20px 0 0 0 var(--fui-primary);
+    }
+
+    &:checked::after {
+      right: 0;
+      left: unset;
+      box-shadow: -2px 4px 3px rgb(0 0 0 / 5%);
+    }
+  }
+
+  &.small {
+    --width: 40px;
+    --radius: 17px;
+    --height: 20px;
+  }
+}
+
+// FormCheckbox
+.form-container.form-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5em;
+
+  input {
+    width: auto;
+    margin: 0;
+    cursor: pointer;
+  }
+
+  label {
+    margin: 0;
+    cursor: pointer;
+  }
+}
+
+// FormUploader: the button is the field
+.form-container.form-uploader .form-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  border: unset !important;
+  background: unset !important;
+}
+
+// FormSelect (multiple) and FormCombobox chips
+.form-container.form-select-multiple .form-wrapper {
+  overflow: hidden;
+
+  .select-result {
+    flex-wrap: nowrap;
+    padding: 0.5em 0.8em;
+
+    &:focus {
+      outline: unset;
+    }
+  }
+}
+
+.form-container .select-result-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  border-radius: var(--fui-radius);
+  background: var(--fui-medium);
+  padding: 0.25em 0.5em;
+  color: var(--fui-medium-text);
+  font-size: 0.8em;
+  white-space: nowrap;
+}
+
+.form-container.form-combobox {
+  .form-wrapper {
+    position: relative;
+  }
+
+  .search-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: grid;
+    place-items: center;
+    height: 100%;
+    aspect-ratio: 1;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .loader {
+    display: grid;
+    place-items: center;
+    height: var(--height);
+    aspect-ratio: 1;
+  }
+
+  .spinner {
+    width: 20px;
+    height: 20px;
+    border: 4px solid rgb(0 0 0 / 10%);
+    border-left-color: var(--fui-primary);
+    border-radius: 50%;
+    animation: fui-spin 1s linear infinite;
+  }
+
+  &.keep-open .form-dropdown {
+    position: relative;
+    border-top: unset;
+    border-bottom-right-radius: var(--fui-radius);
+    border-bottom-left-radius: var(--fui-radius);
+  }
+}
+
+.form-container.form-combobox-multiple {
+  .form-wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    .options-result {
+      display: flex;
+      flex: 1;
+      flex-wrap: nowrap;
+      gap: 0.5em;
+      height: var(--height);
+      padding: 0.5em 0.8em;
+
+      &:focus {
+        outline: unset;
+      }
+    }
+
+    &.dropdown-open .options-result {
+      display: none;
+    }
+
+    &:not(.dropdown-open).with-selection {
+      .search-btn {
+        opacity: 1;
+      }
+
+      input {
+        flex: 0 0 var(--height);
+        width: var(--height);
+        min-width: var(--height);
+      }
+
+      input:hover {
+        cursor: pointer;
+
+        ~ .search-btn {
+          color: var(--fui-primary);
+        }
+      }
+    }
+  }
+
+  &.disabled .form-wrapper {
+    display: none;
+  }
+}
+
+// FormColorpicker
+.form-container.form-colorpicker {
+  .color-picker {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    border: 1px solid rgb(0 0 0 / 25%);
+    border-radius: var(--fui-radius);
+    box-shadow: 0 0 0 2px #ffffff inset;
+    cursor: pointer;
+
+    > button {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      z-index: 3;
+      display: grid;
+      place-items: center;
+      width: 10px;
+      height: 10px;
+      border: 0;
+      border-radius: 50%;
+      background: #000000;
+      padding: 0;
+      color: #ffffff;
+      font-size: 10px;
+      line-height: 0;
+    }
+
+    // Native picker stretched invisibly over the swatch, so a click opens it
+    input[type="color"] {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    &.no-color {
+      background: #ffffff;
+
+      button {
+        display: none;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        background: linear-gradient(
+          -45deg,
+          rgb(255 255 255 / 0%) 45%,
+          rgb(255 0 0) 49%,
+          rgb(255 0 0) 55%,
+          rgb(255 255 255 / 0%) 55%
+        );
+        box-shadow: 0 0 0 2px #ffffff inset;
+      }
+    }
+  }
+
+  &.flex-field {
+    grid-template-columns: 1fr 30px;
+  }
+}
+
+// Editors
+.form-container:is(.form-html, .form-code) .form-wrapper {
+  display: block;
+  border: none;
+}
+
+.form-container.form-html {
+  --fa-wysiwyg-height: 100px;
+}
+
+.form-container.form-code .form-wrapper {
+  height: 300px;
+}
+
+// FormBlock frames custom content without the field chrome
+.form-container.form-block:not(.form-block-default) .form-wrapper {
+  border: transparent !important;
+  background: transparent !important;
+}
+
+// FormLink
+.form-container a.link-dark {
+  color: var(--fui-dark);
+  text-decoration: none;
+
+  &.link-underlined {
+    text-decoration: underline;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Dropdowns and date pickers
+// ---------------------------------------------------------------------------
+
+.form-dropdown {
+  .form-dropdown-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    padding: 0.5em 0.25em;
+  }
+
+  ul {
+    max-height: 150px;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    list-style: none;
+  }
+
+  li {
+    min-width: 150px;
+    padding: 0.25em 1em;
+    white-space: nowrap;
+    cursor: pointer;
+
+    &:hover,
+    &.highlighted {
+      background: #f0f0f0;
+    }
+  }
+
+  .fui-btn {
+    justify-content: flex-start;
+    width: 100%;
+    border-radius: 0;
+  }
+}
+
+.form-dropdown:is(.form-date-dropdown, .form-date-range-dropdown) {
+  max-width: 320px;
+}
+
+.form-date-dropdown-wrapper {
+  padding: 1em;
+}
+
+.form-date-range-dropdown .form-date-range-times {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5em;
+  margin-top: 0.75em;
+
+  small {
+    display: block;
+    margin-bottom: 0.25em;
+    font-weight: 600;
+  }
+}
+
+.form-date-ranges {
+  display: grid;
+  gap: 0.25em;
+  padding: 0.5em 0.75em;
+
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// FormComment
+// ---------------------------------------------------------------------------
+
+.form-comment {
+  > .form-wrapper {
+    display: grid;
+    grid-template-columns: 38px 1fr;
+    gap: 1em;
+
+    .form-container {
+      margin: 0;
+    }
+  }
+
+  .user-avatar {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    margin-top: 2px;
+    border-radius: 50%;
+    background: var(--fui-primary);
+    color: var(--fui-white);
+    font-weight: 600;
+  }
+
+  .form-comment-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.5em;
+  }
+
+  ul.form-comment-attachments {
+    display: flex;
+    gap: 0.25em;
+    margin: 0;
+    padding: 0.5em 0 0;
+    list-style: none;
+  }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 1em;
+    border-radius: 0.75em;
+    padding: 0.5em 1em;
+    font-size: 75%;
+    font-weight: 400;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .badge-medium {
+    background-color: var(--fui-medium);
+    color: var(--fui-medium-text);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Buttons (FormButton renders .fui-btn)
+// ---------------------------------------------------------------------------
+
+.form-container .btn-group {
+  display: flex;
+  gap: 0.25em;
+}
+
+.fui-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  margin: 0;
+  border: none;
+  border-radius: var(--fui-radius);
+  padding: 0.5em 1em;
+  font-family: var(--fui-font-family);
+  font-size: var(--fui-font-size);
+  line-height: 1.5;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &.btn-rounded {
+    width: 39px;
+    height: 39px;
+    border-radius: 50%;
+    padding: 0;
+
+    &.btn-sm {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &.btn-block {
+    justify-content: center;
+    width: 100%;
+  }
+
+  &.btn-sm {
+    font-size: calc(var(--fui-font-size) * 0.85);
+  }
+
+  &.disabled,
+  &:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
+
+@each $theme in $themes {
+  .fui-btn.btn-#{$theme} {
+    border: 1px solid var(--fui-#{$theme});
+    background-color: var(--fui-#{$theme});
+    color: var(--fui-#{$theme}-text);
+    transition: 0.5s ease;
+
+    &:not(:disabled):hover {
+      background-color: color-mix(in srgb, var(--fui-#{$theme}) 75%, #000000) !important;
+    }
+  }
+
+  .fui-btn.btn-outline-#{$theme} {
+    border: 1px solid var(--fui-#{$theme});
+    background-color: transparent;
+    color: var(--fui-#{$theme});
+    transition: 0.5s ease;
+
+    &:not(:disabled):hover {
+      border-color: transparent;
+      background-color: color-mix(in srgb, var(--fui-#{$theme}) 75%, #000000) !important;
+      color: var(--fui-#{$theme}-text);
+    }
+  }
+}
+
+// After the themes: a plain button ignores its theme colors
+.fui-btn.btn-plain {
+  margin: 0;
+  border: none;
+  background: transparent;
+  padding: 0.25em 0.5em;
+  color: var(--fui-primary);
+
+  &:not(:disabled):hover {
+    background-color: transparent !important;
+    color: var(--fui-primary-shade);
+  }
+}
+
+// Tooltips of FormButton and WidgetCounter
+.fui-tooltip {
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 5px);
+  z-index: 100;
+  display: block;
+  margin: 0;
+  border-radius: var(--fui-radius);
+  background-color: rgb(0 0 0 / 75%);
+  padding: 5px 10px;
+  color: #ffffff;
+  font-family: var(--fui-font-family);
+  font-size: var(--fui-font-size);
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transform-origin: center center;
+  transition: 0.25s ease-in-out;
+
+  &.left {
+    top: 50%;
+    right: calc(100% + 5px);
+    left: unset;
+    transform: translateY(-50%);
+  }
+
+  &.top {
+    top: unset;
+    bottom: calc(100% + 5px);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &.bottom {
+    top: calc(100% + 5px);
+    bottom: unset;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &.bottom-left {
+    top: calc(100% + 5px);
+    right: 50%;
+    left: unset;
+    transform: translateY(-50%) translateX(0);
+  }
+}
+
+:hover > .fui-tooltip,
+:focus-visible > .fui-tooltip {
+  opacity: 1;
+}
+
+// ---------------------------------------------------------------------------
+// Widgets
+// ---------------------------------------------------------------------------
+
+.card.widget {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+  border-radius: var(--fui-radius);
+  background: var(--fui-white);
+  box-shadow: var(--fui-shadow);
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    border-top-left-radius: var(--fui-radius);
+    border-top-right-radius: var(--fui-radius);
+    border-bottom: 1px solid rgb(0 0 0 / 10%);
+    background: var(--fui-white);
+    padding: 0.75em 1em;
+
+    .widget-icon {
+      display: inline-flex;
+      align-items: center;
+      margin-right: 1em;
+    }
+
+    .widget-title {
+      display: flex;
+      align-items: flex-end;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 1.25em;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 0.5em;
+      margin-left: auto;
+
+      .fui-btn {
+        font-size: calc(var(--fui-font-size) * 0.9);
+        white-space: nowrap;
+      }
+    }
+
+    .widget-desc {
+      margin-left: 1em;
+    }
+  }
+
+  .card-body {
+    flex-grow: 1;
+    padding: 1rem;
+
+    .widget-loader {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      min-height: 200px;
+      margin: 1em 0;
+      border-radius: var(--fui-radius);
+      background: rgb(0 0 0 / 5%);
+      animation: fui-pulse 3s infinite;
+    }
+  }
+
+  .card-footer {
+    padding: 0.5em 1em;
+  }
+
+  &.widget-plain {
+    background: transparent;
+    box-shadow: unset;
+
+    .card-header,
+    .card-body {
+      border: unset;
+      background: transparent;
+    }
+
+    .card-header {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+}
+
+.counter-widget {
+  display: grid;
+  gap: 0.25em;
+  background: rgb(0 0 0 / 10%);
+  padding: 1em;
+
+  h6,
+  h3 {
+    margin: 0;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  h6 {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+
+  @media (min-width: 512px) and (max-width: 768px) {
+    h6 {
+      font-size: 0.9em;
+    }
+
+    h3 {
+      font-size: 1.5em;
+    }
+  }
+
+  .counter-widget-body {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75em;
+
+    > div:first-child {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25em;
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Rich text editor (FormHtml) colors
+// ---------------------------------------------------------------------------
+
+// The editor declares its defaults on .fa-wysiwyg, so :root alone only reaches
+// the panels portaled to <body>.
+:root,
+:root .fa-wysiwyg {
+  --fa-wysiwyg-mention-background: color-mix(in srgb, var(--fui-primary) 15%, transparent);
+  --fa-wysiwyg-mention-text: var(--fui-primary);
+  --fa-wysiwyg-border: var(--fui-input-border);
+  --fa-wysiwyg-bg: var(--fui-surface);
+  --fa-wysiwyg-focus-ring: none;
+  --fa-wysiwyg-radius: calc(var(--fui-font-size) * 0.25);
+  --fa-wysiwyg-toolbar-bg: var(--fui-surface-muted);
+  --fa-wysiwyg-text: var(--fui-text-strong);
+  --fa-wysiwyg-btn-hover-bg: rgb(0 0 0 / 6%);
+  --fa-wysiwyg-btn-on-bg: color-mix(in srgb, var(--fui-primary) 15%, transparent);
+  --fa-wysiwyg-btn-on-text: var(--fui-primary-shade);
+  --fa-wysiwyg-shadow: var(--fui-shadow);
+  --fa-wysiwyg-scrollbar: var(--fui-medium);
+}
+
+.fa-wysiwyg-panel__item:hover,
+.fa-wysiwyg-color-grid__remove:hover,
+.fa-wysiwyg-color-grid__more:hover {
+  background: var(--fa-wysiwyg-btn-hover-bg);
+}
+
+.fa-wysiwyg-panel__item.fa-wysiwyg-panel__item--on,
+.fa-wysiwyg-mentions__item:hover,
+.fa-wysiwyg-mentions__item.fa-wysiwyg-mentions__item--on {
+  background: var(--fa-wysiwyg-btn-on-bg);
+  color: var(--fa-wysiwyg-btn-on-text);
+}
+
+.fa-wysiwyg-color-grid__swatch.fa-wysiwyg-color-grid__swatch--on {
+  box-shadow: 0 0 0 2px var(--fui-primary);
+}
+
+.fa-wysiwyg-table-grid__cell.fa-wysiwyg-table-grid__cell--on {
+  border-color: var(--fui-primary);
+  background: color-mix(in srgb, var(--fui-primary) 15%, transparent);
+}
+
+.fa-wysiwyg-color-picker__input:focus {
+  border-color: var(--fui-primary);
+}
+
+.fa-wysiwyg-link__input {
+  border-color: var(--fa-wysiwyg-border);
+}
+
+.fa-wysiwyg-balloon.fa-wysiwyg-balloon--south {
+  &::before {
+    border-bottom-color: var(--fa-wysiwyg-border);
+  }
+  &::after {
+    border-bottom-color: var(--fa-wysiwyg-bg);
+  }
+}
+
+.fa-wysiwyg-balloon.fa-wysiwyg-balloon--north {
+  &::before {
+    border-top-color: var(--fa-wysiwyg-border);
+  }
+  &::after {
+    border-top-color: var(--fa-wysiwyg-bg);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Modal (FormImageCropper), portaled to <body>
+// ---------------------------------------------------------------------------
+
+:root {
+  --fa-modals-text: var(--fui-text);
+  --fa-modals-bg: var(--fui-white);
+  --fa-modals-bghover: var(--fui-surface-muted);
+  --fa-modals-border: var(--fui-border);
+  --fa-modals-shadow: var(--fui-shadow);
+  --fa-modals-radius: var(--fui-radius);
+}

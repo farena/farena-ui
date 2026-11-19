@@ -4,7 +4,8 @@
 
   .selector-label {
     display: block;
-    font-weight: 500;
+    font-size: 0.9em;
+    font-weight: 600;
     margin-bottom: 0.5rem;
     color: #374151;
   }
@@ -78,8 +79,12 @@
     color: #6b7280;
   }
 
+  &.disabled .selector-label {
+    opacity: 0.36;
+  }
+
   &.disabled .day-cell {
-    opacity: 0.6;
+    opacity: 0.36;
     cursor: default;
     pointer-events: none;
   }

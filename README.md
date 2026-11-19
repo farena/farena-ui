@@ -109,11 +109,13 @@ Override the CSS variables on `:root` or on any ancestor:
 | `--fui-radius`, `--fui-input-height`                                     | `0.25rem`, `40px`                    |
 | `--fui-primary`, `--fui-primary-text`, `--fui-primary-tint`, `--fui-primary-shade` | `#ff9928`, `#fff`, `#ffb35d`, `#d37810` |
 | `--fui-secondary`, `--fui-success`, `--fui-info`, `--fui-warning`, `--fui-danger` (each with `-text`) | `#813dff`, `#6abb45`, `#7ad7e4`, `#ffba3b`, `#e14319` |
+| `--fui-light`, `--fui-medium`, `--fui-dark`, `--fui-white` (each with `-text`) | `#fafafa`, `#bbc0c5`, `#646464`, `#fff` |
 | `--fui-surface`, `--fui-surface-muted`, `--fui-surface-raised`           | `#fafafa`, `#f3f3f3`, `#fff`         |
 | `--fui-border`, `--fui-text`, `--fui-text-strong`, `--fui-text-muted`    | `#d8d6d6`, `#646464`, `#3d3d3d`, `#697a8d` |
+| `--fui-input-border`                                                     | `#c4c4c4`                            |
 | `--fui-shadow`, `--fui-focus-ring`                                       | soft shadow, primary focus ring      |
 
-Component class names (`.form-container`, `.tabs`, `.widget`…) are stable, so you can extend them from your own stylesheet. The playground adds its own application theme (Bootstrap 4 grid and utilities plus extra component styles) on top of the package stylesheet.
+Every button theme (`primary`, `secondary`, `success`, `info`, `warning`, `danger`, `light`, `medium`, `dark`, `white`) reads these variables, in solid and `outlined` variants. Component class names (`.form-container`, `.fui-btn`, `.tabs`, `.widget`…) are stable, so you can extend them from your own stylesheet. The stylesheet only targets classes the package renders: it does not restyle your own elements and needs no CSS framework. The playground is styled by the package stylesheet alone; its own CSS only lays out the page.
 
 ## Routing
 

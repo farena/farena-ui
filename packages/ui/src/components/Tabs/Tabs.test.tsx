@@ -62,7 +62,8 @@ it("renders tab icons with the local glyph fallback", () => {
       <p>Pane</p>
     </Tabs>,
   );
-  expect(document.querySelector('[data-icon-name="fa-solid fa-circle-info"]')).toHaveTextContent(
-    "ⓘ",
+  expect(document.querySelector('[data-icon-name="fa-solid fa-circle-info"]')).toHaveAttribute(
+    "data-icon",
+    "circle-info",
   );
 });

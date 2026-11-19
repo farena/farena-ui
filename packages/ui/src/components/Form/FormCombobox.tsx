@@ -10,7 +10,7 @@ import {
   type SyntheticEvent,
 } from "react";
 import debounce from "../../internal/debounce";
-import FormIcon from "./FormIcon";
+import FormIcon, { IconSvg } from "./FormIcon";
 
 type OptionRecord = {
   label: string;
@@ -283,13 +283,13 @@ export default function FormCombobox({
                         type="button"
                         aria-label={`Remove ${opt.label}`}
                         disabled={disabled}
-                        className="remove-option"
+                        className="remove-option fui-remove"
                         onClick={(e) => {
                           e.stopPropagation();
                           removeOption(ix);
                         }}
                       >
-                        ×
+                        <IconSvg name="xmark" />
                       </button>
                     </div>
                   ))}

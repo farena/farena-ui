@@ -1,9 +1,9 @@
 .accordion {
-  border: 1px solid var(--fui-color-border, #d0d5dd);
+  border: 1px solid var(--fui-border, #d0d5dd);
   border-radius: var(--fui-radius, 0.4rem);
 }
 .accordion-error {
-  border-color: var(--fui-color-danger, #dc3545);
+  border-color: var(--fui-danger, #dc3545);
 }
 .accordion-head {
   display: flex;
@@ -18,7 +18,16 @@
   cursor: pointer;
 }
 .accordion-head:focus-visible {
-  outline: 2px solid var(--fui-color-primary, #175cd3);
+  outline: 2px solid var(--fui-primary, #175cd3);
+}
+// Beats legacy ".accordion .accordion-head" overrides that drop the bottom padding.
+.accordion > button.accordion-head {
+  padding: 0.75rem 1rem;
+}
+.accordion-head .arrow {
+  display: inline-flex;
+  color: var(--fui-text-muted);
+  transition: transform 0.2s ease;
 }
 .accordion-open .accordion-head .arrow {
   transform: rotate(180deg);

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { humanReadableSize } from "../../internal/string";
 import FormButton from "./FormButton";
-import FormIcon from "./FormIcon";
+import FormIcon, { IconSvg } from "./FormIcon";
 import FormText from "./FormText";
 import FormUploader, { type UploadedFile } from "./FormUploader";
 
@@ -156,11 +156,12 @@ export default function FormComment({
                         {attachmentName(a)} ({humanReadableSize(attachmentSize(a))})
                       </span>
                       <button
+                        className="fui-remove"
                         type="button"
                         aria-label={`Remove ${attachmentName(a)}`}
                         onClick={() => removeAttachment(ai)}
                       >
-                        ×
+                        <IconSvg name="xmark" />
                       </button>
                     </div>
                   </li>

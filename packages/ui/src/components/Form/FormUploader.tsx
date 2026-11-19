@@ -3,6 +3,7 @@ import { classNames } from "../../internal/classNames";
 import { useToast } from "../Toast/ToastProvider";
 import ImageManager from "../../internal/ImageManager";
 import FormButton from "./FormButton";
+import { IconSvg } from "./FormIcon";
 
 export type UploadedFile = {
   file: File;
@@ -301,12 +302,13 @@ export default function FormUploader({
               <small>
                 {file.name} ({(file.size / 1024).toFixed(2)}kb)
                 <button
+                  className="fui-remove"
                   type="button"
                   aria-label="Remove selected file"
                   disabled={disabled}
                   onClick={resetInput}
                 >
-                  ×
+                  <IconSvg name="xmark" />
                 </button>
               </small>
             ) : (

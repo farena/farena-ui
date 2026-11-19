@@ -43,5 +43,8 @@ it("renders an avatar without an external font", () => {
       <FormComment onSave={() => {}} />
     </ToastProvider>,
   );
-  expect(document.querySelector('[data-icon-name="fa-solid fa-user"]')).toHaveTextContent("♙");
+  expect(document.querySelector('[data-icon-name="fa-solid fa-user"]')).toHaveAttribute(
+    "data-icon",
+    "user",
+  );
 });

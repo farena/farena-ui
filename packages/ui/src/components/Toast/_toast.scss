@@ -15,21 +15,21 @@
   gap: 0.75rem;
   padding: 0.85rem 1rem;
   border-radius: var(--fui-radius, 0.4rem);
-  background: var(--fui-color-dark, #343a40);
+  background: var(--fui-text-strong, #343a40);
   color: #fff;
   box-shadow: var(--fui-shadow, 0 2px 12px #0003);
 }
 .toast-success {
-  background: var(--fui-color-success, #198754);
+  background: var(--fui-success, #198754);
 }
 .toast-error {
-  background: var(--fui-color-danger, #dc3545);
+  background: var(--fui-danger, #dc3545);
 }
 .toast-warning {
-  background: var(--fui-color-warning, #9a6700);
+  background: var(--fui-warning, #9a6700);
 }
 .toast-info {
-  background: var(--fui-color-info, #0b6e99);
+  background: var(--fui-info, #0b6e99);
 }
 .toast-message {
   flex: 1;

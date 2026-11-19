@@ -1,6 +1,6 @@
 import { useEffect, useId, useRef, useState, type KeyboardEvent, type ReactNode } from "react";
 import { classNames } from "../../internal/classNames";
-import FormIcon from "./FormIcon";
+import FormIcon, { IconSvg } from "./FormIcon";
 import FormDropdown from "./FormDropdown";
 
 export type SelectOption = Record<string, unknown> | string | number;
@@ -208,6 +208,9 @@ export default function FormSelect({
               </option>
             ))}
           </select>
+          <span className="fui-select-chevron" aria-hidden="true">
+            <IconSvg name="chevron-down" />
+          </span>
 
           {children}
         </div>
@@ -239,17 +242,20 @@ export default function FormSelect({
                         type="button"
                         aria-label={`Remove ${getLabel(opt)}`}
                         disabled={disabled}
-                        className="remove-option"
+                        className="remove-option fui-remove"
                         onClick={(e) => {
                           e.stopPropagation();
                           removeOption(ix);
                         }}
                       >
-                        ×
+                        <IconSvg name="xmark" />
                       </button>
                     </div>
                   ))}
                 </div>
+                <span className="fui-select-chevron" aria-hidden="true">
+                  <IconSvg name="chevron-down" />
+                </span>
 
                 {children}
               </div>

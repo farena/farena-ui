@@ -43,12 +43,8 @@ export default function Accordion({
         onClick={toggle}
       >
         <span>{title}</span>
-        <span
-          className="arrow"
-          aria-hidden="true"
-          style={{ transform: isOpen ? "rotate(-90deg)" : "rotate(90deg)" }}
-        >
-          <FormIcon icon="fa-solid fa-arrow-right" />
+        <span className="arrow" aria-hidden="true">
+          <FormIcon icon="chevron-down" />
         </span>
       </button>
       <div className="accordion-body" id={panelId} hidden={!isOpen}>

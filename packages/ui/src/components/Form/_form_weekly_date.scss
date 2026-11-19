@@ -30,7 +30,7 @@
       transform: translateY(-2px);
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
 
-      .day-checkbox i {
+      .day-checkbox .icon {
         color: var(--color-primary-shade);
       }
     }
@@ -44,7 +44,7 @@
         font-weight: 600;
       }
 
-      .day-checkbox i {
+      .day-checkbox .icon {
         color: #ffffff;
       }
     }
@@ -65,7 +65,7 @@
     text-transform: uppercase;
   }
 
-  .day-checkbox i {
+  .day-checkbox .icon {
     font-size: 16px;
     color: #9ca3af;
     transition: color 0.2s ease;

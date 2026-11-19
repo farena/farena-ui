@@ -26,8 +26,12 @@ it("renders named icons through the local glyph fallback", () => {
       <WidgetCounter title="Info" count={1} tooltip="Details" />
     </>,
   );
-  expect(document.querySelector('[data-icon-name="fa-solid fa-chart-line"]')).toHaveTextContent(
-    "↗",
+  expect(document.querySelector('[data-icon-name="fa-solid fa-chart-line"]')).toHaveAttribute(
+    "data-icon",
+    "chart-line",
   );
-  expect(document.querySelector('[data-icon-name="fa fa-circle-info"]')).toHaveTextContent("ⓘ");
+  expect(document.querySelector('[data-icon-name="fa fa-circle-info"]')).toHaveAttribute(
+    "data-icon",
+    "circle-info",
+  );
 });

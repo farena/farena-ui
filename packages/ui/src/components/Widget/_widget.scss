@@ -1,7 +1,7 @@
 .widget {
-  border: 1px solid var(--fui-color-border, #d0d5dd);
+  border: 1px solid var(--fui-border, #d0d5dd);
   border-radius: var(--fui-radius, 0.4rem);
-  background: var(--fui-color-surface, #fff);
+  background: var(--fui-surface-raised, #fff);
 }
 .widget-plain {
   border: 0;
@@ -12,7 +12,7 @@
   align-items: center;
   gap: 0.75rem;
   padding: 1rem;
-  border-bottom: 1px solid var(--fui-color-border, #d0d5dd);
+  border-bottom: 1px solid var(--fui-border, #d0d5dd);
 }
 .widget .widget-title {
   flex: 1;
@@ -26,4 +26,12 @@
 .widget .widget-loader {
   display: flex;
   justify-content: center;
+}
+
+.card.widget .card-header .widget-icon {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 0;
+  font-size: 1.25em;
+  color: var(--fui-text-muted);
 }

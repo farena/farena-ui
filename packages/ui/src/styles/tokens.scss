@@ -1,0 +1,98 @@
+:root,
+.fui-theme {
+  --fui-font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --fui-font-size: 14px;
+  --fui-radius: 0.25rem;
+  --fui-input-height: 40px;
+  --fui-primary: #ff9928;
+  --fui-primary-text: #ffffff;
+  --fui-primary-tint: #ffb35d;
+  --fui-primary-shade: #d37810;
+  --fui-secondary: #813dff;
+  --fui-secondary-text: #ffffff;
+  --fui-surface: #fafafa;
+  --fui-surface-muted: #f3f3f3;
+  --fui-surface-raised: #ffffff;
+  --fui-border: #d8d6d6;
+  --fui-text: #646464;
+  --fui-text-strong: #3d3d3d;
+  --fui-text-muted: #697a8d;
+  --fui-danger: #e14319;
+  --fui-danger-text: #ffffff;
+  --fui-success: #6abb45;
+  --fui-success-text: #ffffff;
+  --fui-info: #7ad7e4;
+  --fui-info-text: #ffffff;
+  --fui-warning: #ffba3b;
+  --fui-warning-text: #3d3d3d;
+  --fui-shadow: 0 0 10px rgb(67 89 113 / 12%);
+  --fui-focus-ring: 0 0 0 3px rgb(255 153 40 / 25%);
+}
+
+// Legacy names are scoped to package surfaces so the stylesheet never changes
+// a consumer's generic design tokens on :root.
+:where(
+  .fui-theme,
+  .form-container,
+  .form-dropdown,
+  .calendar-component,
+  .accordion,
+  .tabs,
+  .widget,
+  .counter-widget,
+  .weekday-selector,
+  .form-time,
+  .toast-container,
+  .fa-simple-pager,
+  .infinite-scroll-container,
+  .image-cropper
+) {
+  --font-family: var(--fui-font-family);
+  --font-size: var(--fui-font-size);
+  --radius: var(--fui-radius);
+  --input-height: var(--fui-input-height);
+  --color-primary: var(--fui-primary);
+  --color-primary-text: var(--fui-primary-text);
+  --color-primary-tint: var(--fui-primary-tint);
+  --color-primary-shade: var(--fui-primary-shade);
+  --color-primary-75: rgb(255 153 40 / 46%);
+  --color-primary-50: rgb(255 153 40 / 31%);
+  --color-primary-25: rgb(255 153 40 / 15%);
+  --color-secondary: var(--fui-secondary);
+  --color-secondary-text: var(--fui-secondary-text);
+  --color-white: var(--fui-surface-raised);
+  --color-white-shade: var(--fui-border);
+  --color-white-text: #010101;
+  --color-light: var(--fui-surface);
+  --color-light-shade: var(--fui-surface-muted);
+  --color-light-text: #000000;
+  --color-medium: #bbc0c5;
+  --color-medium-text: #ffffff;
+  --color-medium-shade: #5a646e;
+  --color-dark: var(--fui-text);
+  --color-dark-tint: #737373;
+  --color-dark-shade: var(--fui-text-strong);
+  --color-dark-text: #ffffff;
+  --color-danger: var(--fui-danger);
+  --color-danger-shade: #be3813;
+  --color-danger-text: var(--fui-danger-text);
+  --color-success: var(--fui-success);
+  --color-success-shade: #5da53c;
+  --color-success-text: var(--fui-success-text);
+  --color-info: var(--fui-info);
+  --color-info-shade: #68bac5;
+  --color-info-text: var(--fui-info-text);
+  --color-warning: var(--fui-warning);
+  --color-warning-shade: #ebaa33;
+  --color-warning-text: var(--fui-warning-text);
+  --body-text: var(--fui-text);
+  --body-bg: var(--fui-surface);
+  --shadow: var(--fui-shadow);
+
+  --fa-modals-text: var(--fui-text);
+  --fa-modals-bg: var(--fui-surface-raised);
+  --fa-modals-bghover: var(--fui-surface-muted);
+  --fa-modals-border: var(--fui-border);
+  --fa-modals-shadow: var(--fui-shadow);
+  --fa-modals-radius: var(--fui-radius);
+}

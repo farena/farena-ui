@@ -1,0 +1,31 @@
+.tabs-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  overflow-x: auto;
+}
+.tabs-nav-item {
+  display: inline-flex;
+  align-items: center;
+}
+.tabs-nav .btn {
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  padding: 0.6rem 0.9rem;
+  white-space: nowrap;
+}
+.tabs-nav .btn.active {
+  color: var(--fui-color-primary, #175cd3);
+}
+.tabs-underlined .tabs-nav .btn.active {
+  box-shadow: inset 0 -2px var(--fui-color-primary, #175cd3);
+}
+.tabs-nav .btn:focus-visible {
+  outline: 2px solid var(--fui-color-primary, #175cd3);
+  outline-offset: -2px;
+}
+.tabs-body {
+  padding: 1rem 0;
+}

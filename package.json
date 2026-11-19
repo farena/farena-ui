@@ -1,0 +1,34 @@
+{
+  "name": "farena-ui-workspace",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "playground"
+  ],
+  "scripts": {
+    "dev": "npm run build:ui && npm run dev --workspace=@farena/farena-ui-playground",
+    "build:ui": "npm run build --workspace=@farena/farena-ui",
+    "build:playground": "npm run build --workspace=@farena/farena-ui-playground",
+    "build": "npm run build:ui && npm run build:playground",
+    "typecheck": "npm run build:ui && npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspace=@farena/farena-ui",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.15.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.8",
+    "globals": "^17.14.0",
+    "prettier": "^3.10.1",
+    "typescript-eslint": "^8.73.0"
+  }
+}

@@ -1,0 +1,9 @@
+node_modules/
+dist/
+build/
+.react-router/
+coverage/
+.playwright-cli/
+package-lock.json
+*.md
+docs/

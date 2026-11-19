@@ -1,0 +1,32 @@
+.accordion {
+  border: 1px solid var(--fui-color-border, #d0d5dd);
+  border-radius: var(--fui-radius, 0.4rem);
+}
+.accordion-error {
+  border-color: var(--fui-color-danger, #dc3545);
+}
+.accordion-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  cursor: pointer;
+}
+.accordion-head:focus-visible {
+  outline: 2px solid var(--fui-color-primary, #175cd3);
+}
+.accordion-open .accordion-head .arrow {
+  transform: rotate(180deg);
+}
+.accordion-container {
+  padding: 0.75rem 1rem;
+}
+
+.accordion-body[hidden] {
+  display: none;
+}

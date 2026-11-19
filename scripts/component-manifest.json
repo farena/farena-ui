@@ -1,0 +1,166 @@
+[
+  {
+    "name": "Accordion",
+    "file": "packages/ui/src/components/Accordion/Accordion.tsx"
+  },
+  {
+    "name": "Calendar",
+    "file": "packages/ui/src/components/Calendar/Calendar.tsx"
+  },
+  {
+    "name": "AreaChart",
+    "file": "packages/ui/src/components/Charts/AreaChart.tsx"
+  },
+  {
+    "name": "BarChart",
+    "file": "packages/ui/src/components/Charts/BarChart.tsx"
+  },
+  {
+    "name": "Chart",
+    "file": "packages/ui/src/components/Charts/Chart.tsx"
+  },
+  {
+    "name": "DonutChart",
+    "file": "packages/ui/src/components/Charts/DonutChart.tsx"
+  },
+  {
+    "name": "HeatmapChart",
+    "file": "packages/ui/src/components/Charts/HeatmapChart.tsx"
+  },
+  {
+    "name": "LineChart",
+    "file": "packages/ui/src/components/Charts/LineChart.tsx"
+  },
+  {
+    "name": "PieChart",
+    "file": "packages/ui/src/components/Charts/PieChart.tsx"
+  },
+  {
+    "name": "RadarChart",
+    "file": "packages/ui/src/components/Charts/RadarChart.tsx"
+  },
+  {
+    "name": "RadialBarChart",
+    "file": "packages/ui/src/components/Charts/RadialBarChart.tsx"
+  },
+  {
+    "name": "ScatterChart",
+    "file": "packages/ui/src/components/Charts/ScatterChart.tsx"
+  },
+  {
+    "name": "FormBlock",
+    "file": "packages/ui/src/components/Form/FormBlock.tsx"
+  },
+  {
+    "name": "FormBoolean",
+    "file": "packages/ui/src/components/Form/FormBoolean.tsx"
+  },
+  {
+    "name": "FormButton",
+    "file": "packages/ui/src/components/Form/FormButton.tsx"
+  },
+  {
+    "name": "FormCheckbox",
+    "file": "packages/ui/src/components/Form/FormCheckbox.tsx"
+  },
+  {
+    "name": "FormCode",
+    "file": "packages/ui/src/components/Form/FormCode.tsx"
+  },
+  {
+    "name": "FormColorpicker",
+    "file": "packages/ui/src/components/Form/FormColorpicker.tsx"
+  },
+  {
+    "name": "FormCombobox",
+    "file": "packages/ui/src/components/Form/FormCombobox.tsx"
+  },
+  {
+    "name": "FormComment",
+    "file": "packages/ui/src/components/Form/FormComment.tsx"
+  },
+  {
+    "name": "FormDate",
+    "file": "packages/ui/src/components/Form/FormDate.tsx"
+  },
+  {
+    "name": "FormDateRange",
+    "file": "packages/ui/src/components/Form/FormDateRange.tsx"
+  },
+  {
+    "name": "FormDropdown",
+    "file": "packages/ui/src/components/Form/FormDropdown.tsx"
+  },
+  {
+    "name": "FormHtml",
+    "file": "packages/ui/src/components/Form/FormHtml.tsx"
+  },
+  {
+    "name": "FormIcon",
+    "file": "packages/ui/src/components/Form/FormIcon.tsx"
+  },
+  {
+    "name": "FormImageCropper",
+    "file": "packages/ui/src/components/Form/FormImageCropper.tsx"
+  },
+  {
+    "name": "FormLink",
+    "file": "packages/ui/src/components/Form/FormLink.tsx"
+  },
+  {
+    "name": "FormNumber",
+    "file": "packages/ui/src/components/Form/FormNumber.tsx"
+  },
+  {
+    "name": "FormSelect",
+    "file": "packages/ui/src/components/Form/FormSelect.tsx"
+  },
+  {
+    "name": "FormSwitch",
+    "file": "packages/ui/src/components/Form/FormSwitch.tsx"
+  },
+  {
+    "name": "FormText",
+    "file": "packages/ui/src/components/Form/FormText.tsx"
+  },
+  {
+    "name": "FormTime",
+    "file": "packages/ui/src/components/Form/FormTime.tsx"
+  },
+  {
+    "name": "FormUploader",
+    "file": "packages/ui/src/components/Form/FormUploader.tsx"
+  },
+  {
+    "name": "FormWeeklyDate",
+    "file": "packages/ui/src/components/Form/FormWeeklyDate.tsx"
+  },
+  {
+    "name": "ImageCropper",
+    "file": "packages/ui/src/components/ImageCropper/ImageCropper.tsx"
+  },
+  {
+    "name": "InfiniteScroll",
+    "file": "packages/ui/src/components/Pagination/InfiniteScroll.tsx"
+  },
+  {
+    "name": "SimplePager",
+    "file": "packages/ui/src/components/Pagination/SimplePager.tsx"
+  },
+  {
+    "name": "Tabs",
+    "file": "packages/ui/src/components/Tabs/Tabs.tsx"
+  },
+  {
+    "name": "ToastProvider",
+    "file": "packages/ui/src/components/Toast/ToastProvider.tsx"
+  },
+  {
+    "name": "Widget",
+    "file": "packages/ui/src/components/Widget/Widget.tsx"
+  },
+  {
+    "name": "WidgetCounter",
+    "file": "packages/ui/src/components/Widget/WidgetCounter.tsx"
+  }
+]

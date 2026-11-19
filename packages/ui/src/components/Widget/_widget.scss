@@ -1,0 +1,29 @@
+.widget {
+  border: 1px solid var(--fui-color-border, #d0d5dd);
+  border-radius: var(--fui-radius, 0.4rem);
+  background: var(--fui-color-surface, #fff);
+}
+.widget-plain {
+  border: 0;
+  background: transparent;
+}
+.widget .card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-bottom: 1px solid var(--fui-color-border, #d0d5dd);
+}
+.widget .widget-title {
+  flex: 1;
+}
+.widget .widget-title h3 {
+  margin: 0;
+}
+.widget .card-body {
+  padding: 1rem;
+}
+.widget .widget-loader {
+  display: flex;
+  justify-content: center;
+}

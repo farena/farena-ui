@@ -1,0 +1,36 @@
+// Playground theme: Bootstrap 4.6 (reboot, grid, utilities) plus the admin
+// panel look the components were extracted from.
+$spacer: 1rem;
+$spacers: (
+  6: $spacer * 4.5,
+  7: $spacer * 6,
+);
+
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/tables";
+@import "bootstrap/scss/forms";
+@import "bootstrap/scss/badge";
+@import "bootstrap/scss/alert";
+@import "bootstrap/scss/utilities";
+
+@import "./functions";
+@import "./variables";
+@import "./main";
+@import "./utils";
+@import "./containers";
+@import "./items";
+@import "./colors";
+@import "./forms";
+@import "./fa_wysiwyg";
+@import "./transitions";
+@import "./tabs";
+@import "./lists";
+@import "./accordion";
+@import "./calendar";
